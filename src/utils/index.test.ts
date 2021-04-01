@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { AddressZero } from '@ethersproject/constants'
-import { TokenAmount, Token, ChainId, Percent, JSBI } from '@uniswap/sdk'
+import { TokenAmount, Token, ChainId, Percent, JSBI } from 'easybakeswap-sdk'
 
 import {
   getEtherscanLink,
@@ -55,12 +55,12 @@ describe('utils', () => {
     })
 
     it('returns the checksummed address', () => {
-      expect(isAddress('0xf164fc0ec4e93095b804a4795bbe1e041497b92a')).toBe('0xf164fC0Ec4E93095b804a4795bBe1e041497b92a')
-      expect(isAddress('0xf164fC0Ec4E93095b804a4795bBe1e041497b92a')).toBe('0xf164fC0Ec4E93095b804a4795bBe1e041497b92a')
+      expect(isAddress('0x251081fc989ee45597e7c8fee2698191f1aaeee6')).toBe('0x251081fc989ee45597e7c8fee2698191f1aaeee6')
+      expect(isAddress('0x251081fc989ee45597e7c8fee2698191f1aaeee6')).toBe('0x251081fc989ee45597e7c8fee2698191f1aaeee6')
     })
 
     it('succeeds even without prefix', () => {
-      expect(isAddress('f164fc0ec4e93095b804a4795bbe1e041497b92a')).toBe('0xf164fC0Ec4E93095b804a4795bBe1e041497b92a')
+      expect(isAddress('f164fc0ec4e93095b804a4795bbe1e041497b92a')).toBe('0x251081fc989ee45597e7c8fee2698191f1aaeee6')
     })
     it('fails if too long', () => {
       expect(isAddress('f164fc0ec4e93095b804a4795bbe1e041497b92a0')).toBe(false)
@@ -73,7 +73,7 @@ describe('utils', () => {
     })
 
     it('truncates middle characters', () => {
-      expect(shortenAddress('0xf164fc0ec4e93095b804a4795bbe1e041497b92a')).toBe('0xf164...b92a')
+      expect(shortenAddress('0x251081fc989ee45597e7c8fee2698191f1aaeee6')).toBe('0xf164...b92a')
     })
 
     it('truncates middle characters even without prefix', () => {
